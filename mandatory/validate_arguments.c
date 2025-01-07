@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:02:48 by rheringe          #+#    #+#             */
-/*   Updated: 2024/12/23 18:40:21 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/06 10:33:05 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,23 @@ t_bool	check_duplication(char *argv_split_list[])
 }
 t_bool check_letters(char *nbr)
 {
-	
+	size_t	index;
+	t_bool	valid;
+
+	index = 0;
+	valid = TRUE;
+	if (nbr[index] == '\0')
+		valid = FALSE;
+	while (nbr[index])
+	{
+		if ((nbr[index] == '-' || nbr[index] == '+') && !ft_isdigit(number[index +1 ]))
+			valid = FALSE;
+		else if (!ft_isdigit(nbr[index]))
+		{
+			if (nbr[index] != '-' && nbr[index] != '+')
+				valid = FALSE;
+		}
+		index++;
+	}
+	return (valid);
 }
