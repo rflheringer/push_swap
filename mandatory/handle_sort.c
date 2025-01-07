@@ -6,11 +6,11 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:06:10 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 12:33:39 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/07 17:05:30 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	set_position(t_stack *stack)
 {
@@ -31,22 +31,6 @@ void	set_position(t_stack *stack)
 		stack = stack->next;
 		++current_position;
 	}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-}
-
-t_bool	check_ordered(t_stack *stack)
-{
-	t_stack	*temp;
-
-	if (stack == NULL)
-		return (FALSE);
-	temp = stack;
-	while (temp->stack)
-	{
-		if (temp->value > temp->next->value)
-			return (FALSE);
-		temp = temp->next;
-	}
-	return (TRUE);
 }
 
 int	find_first_pos(t_stack *stack)
@@ -85,4 +69,16 @@ int	find_last_pos(t_stack *stack)
 		stack = stack->next;
 	}
 	return (pos);
+}
+
+int	get_match_node_price(t_stack *stack, size_t len_match_stack)
+{
+	int	cost;
+
+	cost = 0;
+	if (stack->match_node->above_center)
+		cost += stack->match_node->pos;
+	else
+		cost += (len_match_stack - stack->match_node->pos);
+	return (cost);
 }

@@ -6,13 +6,13 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:53:35 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/06 12:42:58 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:48:33 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-t_push	init_push_swap(int argc, char **argv)
+t_push	*init_push_swap(int argc, char **argv)
 {
 	t_push	*push_swap;
 	push_swap = (t_push *)malloc(sizeof(t_push));

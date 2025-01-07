@@ -6,15 +6,15 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:22:52 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/06 14:52:46 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:45:55 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int main (int argc, char **argv)
 {
-	t_list	push_swap;
+	t_push	*push_swap;
 
 	if (argc == 2)
 	{
@@ -28,58 +28,9 @@ int main (int argc, char **argv)
 			else
 				big_sort(push_swap);
 		}
-		clear_all(push_swap, EXIT_SUCCESS);
+		free_and_close(push_swap, EXIT_SUCCESS);
 	}
 	else	
 		message_error(EXIT_NO_ARGS);
 	return (0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// char **handle_string(char **argv)
-// {
-// 	if (*argv[1] == '\0')
-// 		printf ("ERRO");
-// 	argv = ft_split(argv[1], ' ');
-// 	while (*argv){
-// 		printf ("%s\n" ,*argv);
-// 		argv++;
-// 	}
-// 	return (argv);
-// }
-
-
-// int main (int argc, char **argv)
-// {
-// 	if (argc > 2)
-// 	{
-// 		handle_string(argv);		
-// 	}
-// 	return (0);
-// }

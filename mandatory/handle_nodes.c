@@ -6,11 +6,11 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:38:59 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/06 12:50:17 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/07 18:12:27 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 t_stack	*create_node(int value)
 {
@@ -34,8 +34,30 @@ t_stack	*find_last_node(t_stack *stack)
 {
 	if (stack == NULL)
 		handle_errors(EXIT_FAILURE);
-	while(stack->next != NULL)
+	while (stack->next != NULL)
 		stack = stack->next;
-	return (stack);	
+	return (stack);
+}
+t_stack	*get_node(t_stack *stack, int pos)
+{
+	while (stack != NULL)
+	{
+		if (stack->pos == pos)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }
 
+t_stack	*get_lcost(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack != NULL)
+	{
+		if (stack->lcost)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}

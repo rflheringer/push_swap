@@ -6,23 +6,23 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:53:06 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 12:12:31 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:28:50 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void small_sort(t_push *push_swap)
+void	small_sort(t_push *push_swap)
 {
 	if (push_swap->length_a == 2)
 		swap(push_swap, sa, TRUE);
 	else if (push_swap->length_a == 3)
 		sort_three(push_swap);
-	else 
+	else
 		sort_few_elements(push_swap);
 }
 
-void	sort_three (t_push *push_swap)
+void	sort_three(t_push *push_swap)
 {
 	short	first_pos;
 	short	last_pos;
@@ -40,7 +40,7 @@ void	sort_three (t_push *push_swap)
 		if (last_pos == 0)
 			rotate(oush_swap, ra, TRUE);
 		else
-			swap(push_swap, sa, TRUE);	
+			swap(push_swap, sa, TRUE);
 	}
 	else if (first_pos == 2)
 	{
@@ -52,7 +52,7 @@ void	sort_three (t_push *push_swap)
 
 void	*sort_few_elements(t_push *push_swap)
 {
-	short first_pos;
+	short	first_pos;
 
 	while (stack_length(t_stack->stack_a) != 3)
 	{

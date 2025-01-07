@@ -6,9 +6,11 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:02:48 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/06 10:33:05 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/07 16:44:15 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/push_swap.h"
 
 void	validate_args(t_push *push_swap)
 {
