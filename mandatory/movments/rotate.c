@@ -6,11 +6,12 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 18:28:58 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 10:14:16 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 18:00:45 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
+#include "../../libs/printf/ft_printf.h"
 
 void	rotate(t_push *push_swap, t_mv type, t_bool print_mv)
 {
@@ -35,17 +36,18 @@ void	rotate(t_push *push_swap, t_mv type, t_bool print_mv)
 	}
 }
 
-void	execute_rotate(t_stack **t_stack)
+void	execute_rotate(t_stack **stack)
 {
-	t_stack	*current_last;
-	t_stack	*new_last;
+    t_stack	*current_last;
+    t_stack	*new_last;
 
-	if (*stack == NULL || (*stack)->next == NULL)
-		return ;
-	current_last = find_last_node(*stack);
-	new_last = stack;
-	(*stack)->prev = NULL;
-	current_last->next = new_last;
-	new_last->prev = current_last;
-	new_last->next = NULL;
+    if (*stack == NULL || (*stack)->next == NULL)
+        return ;
+    current_last = find_last_node(*stack);
+    new_last = *stack;
+    *stack = (*stack)->next;
+    (*stack)->prev = NULL;
+    current_last->next = new_last;
+    new_last->prev = current_last;
+    new_last->next = NULL;
 }

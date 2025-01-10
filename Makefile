@@ -2,24 +2,29 @@ NAME			=	push_swap
 # BONUS_NAME		=	checker
 RM				=	rm -f
 CC				=	cc
-CFLAGS			=	-Wall -Wextra -Werror
+CFLAGS			=	-Wall -Wextra -Werror -I$(INC_PATH) -I./libs/printf
 
 SRC_PATH		=	./mandatory
 # BONUS_PATH		=	./src_bonus
 INC_PATH		=	./include
 LIB_PATH		=	./libs/libft
+CMD_PATH 		= 	movments/
 
-SRC				=	push_swap.c \
-					big_sort_utils.c \
-					big_sort.c \
-					handle_errors.c \
-					handle_nodes.c \
-					handle_sort.c \
-					handle_stacks.c \
-					init_push_swap.c \
-					push_swap.c \
-					small_sort.c \
-					validate_arguments.c 
+SRC				=	$(CMD_PATH)push.c \
+                    $(CMD_PATH)reverse_rotate.c \
+                    $(CMD_PATH)rotate.c \
+                    $(CMD_PATH)swap.c \
+                    push_swap.c \
+                    big_sort_utils.c \
+                    big_sort.c \
+                    handle_errors.c \
+                    handle_nodes.c \
+                    handle_sort.c \
+                    handle_stacks.c \
+                    init_push_swap.c \
+                    push_swap.c \
+                    small_sort.c \
+                    validate_arguments.c 
 
 # BONUS_SRC		=	checker.c \
 # 					get_args_bonus.c \
@@ -30,39 +35,40 @@ SRC				=	push_swap.c \
 OBJ				=	$(addprefix $(SRC_PATH)/, $(SRC:.c=.o))
 BONUS_OBJ		=	$(addprefix $(BONUS_PATH)/, $(BONUS_SRC:.c=.o))
 
-INC				=	-I$(INC_PATH)
-
 LIBFT			=	$(LIB_PATH)/libft.a
 
 all:				$(NAME)
 
 $(LIBFT):
-					make -C $(LIB_PATH) -s
+	make -C $(LIB_PATH) -s
 
 $(NAME):			$(LIBFT) $(OBJ)
-						$(CC) $(CFLAGS) $(OBJ) -L$(LIB_PATH) -lft -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -L$(LIB_PATH) -lft -o $(NAME)
 
-$(SRC_PATH)%.o: $(SRC_PATH)%.c $(INC_PATH)/push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+$(SRC_PATH)/movments/%.o: $(SRC_PATH)/movments/%.c $(INC_PATH)/push_swap.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(SRC_PATH)/%.o: $(SRC_PATH)/%.c $(INC_PATH)/push_swap.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus:				$(BONUS_NAME)
 
 $(BONUS_NAME):		$(LIBFT) $(BONUS_OBJ)
-						$(CC) $(CFLAGS) $(BONUS_OBJ) -L$(LIB_PATH) -lft -o $(BONUS_NAME)
+	$(CC) $(CFLAGS) $(BONUS_OBJ) -L$(LIB_PATH) -lft -o $(BONUS_NAME)
 
-$(BONUS_PATH)%.o: $(BONUS_PATH)%.c $(INC_PATH)/checker.h
-	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+$(BONUS_PATH)/%.o: $(BONUS_PATH)/%.c $(INC_PATH)/checker.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 val: all
 	@valgrind --quiet --leak-check=full --show-leak-kinds=all ./$(NAME)
-	
+    
 clean:
-					$(RM) $(OBJ) $(BONUS_OBJ)
-					make clean -C $(LIB_PATH) -s
+	$(RM) $(OBJ) $(BONUS_OBJ)
+	make clean -C $(LIB_PATH) -s
 
 fclean:				clean
-					$(RM) $(NAME) $(BONUS_NAME)
-					make fclean -C $(LIB_PATH) -s
+	$(RM) $(NAME) $(BONUS_NAME)
+	make fclean -C $(LIB_PATH) -s
 
 re:					fclean all
 

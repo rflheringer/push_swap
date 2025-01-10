@@ -6,23 +6,24 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:21:18 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 10:32:27 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 18:02:24 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
+#include "../../libs/printf/ft_printf.h"
 
 void	push(t_push *push_swap, t_mv type, t_bool print_mv)
 {
 	if (type == pa)
 	{
-		execute_push(&push_swap->stack_a, &push_swap->stack_b)
+		execute_push(&push_swap->stack_a, &push_swap->stack_b);
 		if (print_mv)
 				ft_printf("pa\n");
 	}
 	else if (type == pb)
 	{
-		execute_push(&push_swap->stack_b, &push_swap->stack_a)
+		execute_push(&push_swap->stack_b, &push_swap->stack_a);
 		if (print_mv)
 				ft_printf("pb\n");
 	}

@@ -6,11 +6,13 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:14:23 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 18:52:18 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:50:08 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../includes/libft.h"
+#include "../printf/ft_printf.h"
 
 void	message_error(short error_code)
 {

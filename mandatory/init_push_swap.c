@@ -6,11 +6,12 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:53:35 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 16:48:33 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 11:26:08 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
 t_push	*init_push_swap(int argc, char **argv)
 {
@@ -22,11 +23,11 @@ t_push	*init_push_swap(int argc, char **argv)
 	push_swap->stack_b = NULL;
 	push_swap->length_a = 0;
 	push_swap->length_b = 0;
-	push_swap->argv_checker = FALSE;
+	push_swap->check_argv = FALSE;
 	if (argc == 2)
 	{
 		push_swap->argv = (ft_split(argv[1], ' '));
-		push_swap->argv_checker = TRUE;
+		push_swap->check_argv = TRUE;
 	}
 	else
 		push_swap->argv = ++argv;

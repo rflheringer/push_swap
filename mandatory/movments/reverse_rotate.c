@@ -6,11 +6,12 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 10:33:05 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 10:39:21 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 18:00:42 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
+#include "../../libs/printf/ft_printf.h"
 
 void	reverse_rotate(t_push *push_swap, t_mv type, t_bool print_mv)
 {

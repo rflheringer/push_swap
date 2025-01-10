@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 15:48:17 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 15:48:35 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:51:21 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-// Printf header
-# include "./ft_printf/includes/ft_printf.h"
-
-// Get_next_line header
-# include "./get_next_line/includes/get_next_line.h"
-
 // Struct for linked list
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+// Printf header
+# include "../printf/ft_printf.h"
+
 
 // Part 1 - Libc Functions
 
@@ -52,7 +50,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dest_size);
-size_t	ft_strlen(const char *s);
+int		ft_strlen(const char *s);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);

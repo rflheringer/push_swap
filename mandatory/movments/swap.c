@@ -6,9 +6,12 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:52:28 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/06 18:28:21 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 18:00:46 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../../includes/push_swap.h"
+#include "../../libs/printf/ft_printf.h"
 
 void	swap(t_push *push_swap, t_mv type, t_bool print_mv)
 {
@@ -18,7 +21,7 @@ void	swap(t_push *push_swap, t_mv type, t_bool print_mv)
 		if (print_mv)
 			ft_printf("sa\n");
 	}
-	else if (type === sb)
+	else if (type == sb)
 	{
 		execute_swap(&push_swap->stack_b);
 		if (print_mv)

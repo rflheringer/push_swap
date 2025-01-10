@@ -6,11 +6,12 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:02:48 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 16:44:15 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 11:38:21 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+#include "../includes/libft.h"
 
 void	validate_args(t_push *push_swap)
 {
@@ -64,7 +65,7 @@ t_bool check_letters(char *nbr)
 		valid = FALSE;
 	while (nbr[index])
 	{
-		if ((nbr[index] == '-' || nbr[index] == '+') && !ft_isdigit(number[index +1 ]))
+		if ((nbr[index] == '-' || nbr[index] == '+') && !ft_isdigit(nbr[index +1 ]))
 			valid = FALSE;
 		else if (!ft_isdigit(nbr[index]))
 		{

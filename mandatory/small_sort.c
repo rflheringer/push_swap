@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:53:06 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 16:28:50 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 11:37:15 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	sort_three(t_push *push_swap)
 	else if (first_pos == 1)
 	{
 		if (last_pos == 0)
-			rotate(oush_swap, ra, TRUE);
+			rotate(push_swap, ra, TRUE);
 		else
 			swap(push_swap, sa, TRUE);
 	}
@@ -50,15 +50,15 @@ void	sort_three(t_push *push_swap)
 	}
 }
 
-void	*sort_few_elements(t_push *push_swap)
+void	sort_few_elements(t_push *push_swap)
 {
 	short	first_pos;
 
-	while (stack_length(t_stack->stack_a) != 3)
+	while (stack_length(push_swap->stack_a) != 3)
 	{
 		first_pos = find_first_pos(push_swap->stack_a);
-		if (push_swap->stack_a->position != first_pos)
-			first_to_last(push_swap);
+		if (push_swap->stack_a->pos != first_pos)
+			lcost_to_top(push_swap);
 		push(push_swap, pb, TRUE);
 	}
 	if (!check_ordered(push_swap->stack_a))

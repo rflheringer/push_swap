@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:24:10 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 19:03:44 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/10 11:36:04 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	set_position(t_stack *stack);
 //small_sort functions
 void	small_sort(t_push *push_swap);
 void	sort_three (t_push *push_swap);
-void	*sort_few_elements(t_push *push_swap);
+void	sort_few_elements(t_push *push_swap);
 
 //big_sort functions
 void	big_sort(t_push *push_swap);
