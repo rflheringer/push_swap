@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:24:10 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/10 11:36:04 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:17:03 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,8 @@ void	push(t_push *push_swap, t_mv type, t_bool print_mv);
 void	execute_push(t_stack **dst_stack, t_stack **src_stack);
 void	reverse_rotate(t_push *push_swap, t_mv type, t_bool print_mv);
 void	execute_rev_rot(t_stack **stack);
+
+int main(int argc, char **argv);
 
 #endif
 

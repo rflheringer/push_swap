@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:22:52 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/10 11:39:34 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:23:14 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main (int argc, char **argv)
 		}
 		free_and_close(push_swap, EXIT_SUCCESS);
 	}
-	else	
+	else if	(argc > 2)
 		message_error(EXIT_NO_ARGS);
 	return (0);
 }
