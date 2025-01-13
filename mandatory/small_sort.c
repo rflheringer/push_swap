@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 14:53:06 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/10 11:37:15 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/13 17:03:56 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	sort_three(t_push *push_swap)
 
 void	sort_few_elements(t_push *push_swap)
 {
-	short	first_pos;
+	int	first_pos;
 
 	while (stack_length(push_swap->stack_a) != 3)
 	{

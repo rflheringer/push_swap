@@ -2,7 +2,7 @@ NAME			=	push_swap
 # BONUS_NAME		=	checker
 RM				=	rm -f
 CC				=	cc
-CFLAGS			=	-Wall -Wextra -Werror -I$(INC_PATH) -I./libs/printf
+CFLAGS			=	-Wall -Wextra -Werror -g3 -I$(INC_PATH) -I./libs/printf
 
 SRC_PATH		=	./mandatory
 # BONUS_PATH		=	./src_bonus

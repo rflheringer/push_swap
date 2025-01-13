@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:53:19 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/07 16:59:20 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/13 17:42:39 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,32 +68,20 @@ void	set_cost(t_stack *stack_a, t_stack *stack_b)
 		stack_b = stack_b->next;
 	}
 }
-void	set_lcost(t_stack *stack)
+void set_lcost(t_stack *stack, int value)
 {
-	t_stack *lcost_node;
-	int		lcost_cost;
-
-	if (stack == NULL)
-		return ;
-	lcost_node = stack;
-	lcost_cost = INT_MAX;
-	while (stack != NULL)
-	{
-		if (stack->cost < lcost_cost)
-		{
-			lcost_cost = stack->cost;
-			lcost_node = stack;
-		}
-		stack = stack->next;
-	}
-	lcost_node->lcost = TRUE;
+    while (stack != NULL)
+    {
+        stack->lcost = value;
+        stack = stack->next;
+    }
 }
 t_stack	*get_second_bigger(t_stack *stack)
 {
 	t_stack	*biggest;
 	t_stack	*second_bigger;
 
-	biggest = get_node(stack, find_biggest_position(stack));
+	biggest = get_node(stack, find_last_pos(stack));
 	second_bigger = NULL;
 	while (stack != NULL)
 	{
@@ -111,7 +99,7 @@ t_stack	*get_third_bigger(t_stack *stack)
 	t_stack	*second_bigger;
 	t_stack	*third_bigger;
 
-	biggest = get_node(stack, find_biggest_position(stack));
+	biggest = get_node(stack, find_last_pos(stack));
 	second_bigger = get_second_bigger(stack);
 	third_bigger = NULL;
 	while (stack != NULL)

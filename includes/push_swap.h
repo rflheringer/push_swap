@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:24:10 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/13 13:17:03 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/13 16:49:29 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int		find_biggest_position(t_stack *stack);
 //big_sort_utils functions
 void	set_match_node(t_stack *stack_a, t_stack *stack_b);
 void	set_cost(t_stack *stack_a, t_stack *stack_b);
-void	set_lcost(t_stack *stack);
+void 	set_lcost(t_stack *stack, int value);
 t_stack	*get_second_bigger(t_stack *stack);
 t_stack	*get_third_bigger(t_stack *stack);
 
