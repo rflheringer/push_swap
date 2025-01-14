@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_arguments.c                               :+:      :+:    :+:   */
+/*   validate_arguments_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:02:48 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 18:45:36 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/14 18:49:41 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 #include "../includes/libft.h"
 
 void	validate_args(t_push *push_swap)
@@ -31,7 +31,7 @@ void	validate_args(t_push *push_swap)
 		{
 			free_and_close(push_swap, EXIT_FAILURE);
 		}
-	index++;
+		index++;
 	}
 }
 

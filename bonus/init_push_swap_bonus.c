@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_push_swap.c                                   :+:      :+:    :+:   */
+/*   init_push_swap_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:53:35 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 14:27:26 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:28:15 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 #include "../includes/libft.h"
 
 t_push	*init_push_swap(int argc, char **argv)

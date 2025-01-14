@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_errors.c                                    :+:      :+:    :+:   */
+/*   handle_errors_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:14:23 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 14:22:33 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:27:09 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 #include "../includes/libft.h"
 #include "../printf/ft_printf.h"
 
@@ -44,4 +44,15 @@ void	free_split_list(char **split_list)
 		index++;
 	}
 	free(split_list);
+}
+
+void	clear_invalid_movment(t_push *push_swap, char *mv)
+{
+	free(mv);
+	free_and_close(push_swap, EXIT_FAILURE);
+}
+
+int	ft_isatty(int fd)
+{
+	return (write(fd, "\0", 1) == 1);
 }

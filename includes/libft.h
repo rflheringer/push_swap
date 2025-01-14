@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 15:48:17 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/10 17:51:21 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:59:33 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libs/printf/ft_printf.h"
 
 // Struct for linked list
 typedef struct s_list
@@ -24,14 +25,11 @@ typedef struct s_list
 }					t_list;
 
 // Printf header
-# include "../printf/ft_printf.h"
-
 
 // Part 1 - Libc Functions
-
 float	ft_abs(float number);
 int		ft_atoi_base(const char *str, int str_base);
-int		ft_atoi(const char *nptr);
+long	ft_atoi(const char *nptr);
 long	ft_atol(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);

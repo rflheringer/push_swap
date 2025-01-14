@@ -1,15 +1,16 @@
 NAME			=	push_swap
-# BONUS_NAME		=	checker
+BONUS_NAME		=	checker
 RM				=	rm -f
 CC				=	cc
 CFLAGS			=	-Wall -Wextra -Werror -g3 -I$(INC_PATH) -I./libs/printf
 
 SRC_PATH		=	./mandatory
-# BONUS_PATH		=	./src_bonus
+BONUS_PATH		=	./bonus
 INC_PATH		=	./include
 LIB_PATH		=	./libs/libft
 PRINTF_PATH		=	./libs/printf
 CMD_PATH 		= 	movments/
+CMD_PATH_BONUS 	= 	./movments_bonus/
 
 SRC				=	$(CMD_PATH)push.c \
                     $(CMD_PATH)reverse_rotate.c \
@@ -26,11 +27,17 @@ SRC				=	$(CMD_PATH)push.c \
                     small_sort.c \
                     validate_arguments.c 
 
-# BONUS_SRC		=	checker.c \
-# 					get_args_bonus.c \
-# 					init_stack_bonus.c \
-# 					operations_bonus.c \
-# 					checker_utils.c
+BONUS_SRC		=	$(CMD_PATH_BONUS)push_bonus.c \
+                    $(CMD_PATH_BONUS)reverse_rotate_bonus.c \
+                    $(CMD_PATH_BONUS)rotate_bonus.c \
+                    $(CMD_PATH_BONUS)swap_bonus.c \
+					checker.c \
+					handle_errors_bonus.c \
+					handle_nodes_bonus.c \
+					handle_stacks_bonus.c \
+					init_push_swap_bonus.c \
+					read_commands_bonus.c \
+					validate_arguments_bonus.c
 
 OBJ				=	$(addprefix $(SRC_PATH)/, $(SRC:.c=.o))
 BONUS_OBJ		=	$(addprefix $(BONUS_PATH)/, $(BONUS_SRC:.c=.o))
@@ -43,11 +50,14 @@ all:				$(NAME)
 $(LIBFT):
 	make -C $(LIB_PATH) -s
 
-$(PRINTF):
-	make -C $(PRINTF_PATH) -s
+# $(PRINTF):
+# 	make -C $(PRINTF_PATH) -s
 
-$(NAME):			$(LIBFT) $(PRINTF) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -L$(LIB_PATH) -lft -L$(PRINTF_PATH) -lftprintf -o $(NAME)
+$(NAME):			$(LIBFT)  $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -L$(LIB_PATH) -lft -o $(NAME)
+
+# $(NAME):			$(LIBFT) $(PRINTF) $(OBJ)
+# 	$(CC) $(CFLAGS) $(OBJ) -L$(LIB_PATH) -lft -L$(PRINTF_PATH) -lftprintf -o $(NAME)
 
 $(SRC_PATH)/movments/%.o: $(SRC_PATH)/movments/%.c $(INC_PATH)/push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -57,8 +67,11 @@ $(SRC_PATH)/%.o: $(SRC_PATH)/%.c $(INC_PATH)/push_swap.h
 
 bonus:				$(BONUS_NAME)
 
-$(BONUS_NAME):		$(LIBFT) $(PRINTF) $(BONUS_OBJ)
-	$(CC) $(CFLAGS) $(BONUS_OBJ) -L$(LIB_PATH) -lft -L$(PRINTF_PATH) -lftprintf -o $(BONUS_NAME)
+$(BONUS_NAME):		$(LIBFT) $(BONUS_OBJ)
+	$(CC) $(CFLAGS) $(BONUS_OBJ) -L$(LIB_PATH) -lft -o $(BONUS_NAME)
+
+# $(BONUS_NAME):		$(LIBFT) $(PRINTF) $(BONUS_OBJ)
+# 	$(CC) $(CFLAGS) $(BONUS_OBJ) -L$(LIB_PATH) -lft -L$(PRINTF_PATH) -lftprintf -o $(BONUS_NAME)
 
 $(BONUS_PATH)/%.o: $(BONUS_PATH)/%.c $(INC_PATH)/checker.h
 	$(CC) $(CFLAGS) -c $< -o $@

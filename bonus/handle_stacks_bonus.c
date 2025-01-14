@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_stacks.c                                    :+:      :+:    :+:   */
+/*   handle_stacks_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 12:54:59 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 14:27:39 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/14 18:46:22 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/checker.h"
 
 size_t	stack_length(t_stack *stack)
 {
@@ -56,5 +56,26 @@ void	free_stack(t_stack **stack)
 			free(temp);
 		}
 		*stack = NULL;
+	}
+}
+
+void	set_position(t_stack *stack)
+{
+	int	current_position;
+	int	center_line;
+
+	if (stack == NULL)
+		return ;
+	current_position = 0;
+	center_line = stack_length(stack) / 2;
+	while (stack != NULL)
+	{
+		stack->pos = current_position;
+		if (current_position <= center_line)
+			stack->above_center = TRUE;
+		else if (current_position > center_line)
+			stack->above_center = FALSE;
+		stack = stack->next;
+		++current_position;
 	}
 }
