@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 11:24:10 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 18:50:29 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:16:33 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+
+# include "../libs/libft/libft.h"
 
 # define INT_MAX		2147483647
 # define INT_MIN		-2147483648

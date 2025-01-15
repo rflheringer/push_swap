@@ -2,13 +2,12 @@ NAME			=	push_swap
 BONUS_NAME		=	checker
 RM				=	rm -f
 CC				=	cc
-CFLAGS			=	-Wall -Wextra -Werror -g3 -I$(INC_PATH) -I./libs/printf
+CFLAGS			=	-Wall -Wextra -Werror -g3
 
 SRC_PATH		=	./mandatory
 BONUS_PATH		=	./bonus
 INC_PATH		=	./include
 LIB_PATH		=	./libs/libft
-PRINTF_PATH		=	./libs/printf
 CMD_PATH 		= 	movments/
 CMD_PATH_BONUS 	= 	./movments_bonus/
 
@@ -43,11 +42,10 @@ OBJ				=	$(addprefix $(SRC_PATH)/, $(SRC:.c=.o))
 BONUS_OBJ		=	$(addprefix $(BONUS_PATH)/, $(BONUS_SRC:.c=.o))
 
 LIBFT			=	$(LIB_PATH)/libft.a
-PRINTF			=	$(PRINTF_PATH)/libftprintf.a
 
-all:				$(NAME)
+all:			libft	$(NAME) 
 
-$(LIBFT):
+libft:
 	make -C $(LIB_PATH) -s
 
 # $(PRINTF):
@@ -76,8 +74,8 @@ $(BONUS_NAME):		$(LIBFT) $(BONUS_OBJ)
 $(BONUS_PATH)/%.o: $(BONUS_PATH)/%.c $(INC_PATH)/checker.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-val: all
-	@valgrind --quiet --leak-check=full --show-leak-kinds=all ./$(NAME)
+# val: all
+# 	@valgrind --quiet --leak-check=full --show-leak-kinds=all ./$(NAME)
 	
 clean:
 	$(RM) $(OBJ) $(BONUS_OBJ)

@@ -6,12 +6,11 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 12:05:17 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 15:43:35 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:53:25 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
-#include "../includes/get_next_line.h"
 
 void	read_commands(t_push *push_swap)
 {

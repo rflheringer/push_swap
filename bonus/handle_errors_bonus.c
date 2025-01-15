@@ -6,13 +6,11 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:14:23 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 15:27:09 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:52:57 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
-#include "../includes/libft.h"
-#include "../printf/ft_printf.h"
 
 void	message_error(short error_code)
 {

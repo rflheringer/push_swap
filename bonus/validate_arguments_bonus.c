@@ -6,12 +6,11 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 15:02:48 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 18:49:41 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:55:10 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
-#include "../includes/libft.h"
 
 void	validate_args(t_push *push_swap)
 {

@@ -6,12 +6,11 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:52:28 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 14:58:50 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:15:02 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
-#include "../../libs/printf/ft_printf.h"
+#include "../../includes/checker.h"
 
 void	swap(t_push *push_swap, t_mv type, t_bool print_mv)
 {

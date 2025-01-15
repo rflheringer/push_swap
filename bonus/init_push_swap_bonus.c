@@ -6,12 +6,11 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:53:35 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 15:28:15 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:53:21 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
-#include "../includes/libft.h"
 
 t_push	*init_push_swap(int argc, char **argv)
 {

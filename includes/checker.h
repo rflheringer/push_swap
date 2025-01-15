@@ -6,7 +6,7 @@
 /*   By: rheringe <rheringe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 12:13:25 by rheringe          #+#    #+#             */
-/*   Updated: 2025/01/14 15:44:08 by rheringe         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:35:03 by rheringe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "../libs/printf/ft_printf.h"
-# include "../includes/libft.h"
-# include "../includes/get_next_line.h"
+# include "../libs/libft/libft.h"
 
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
@@ -74,7 +72,6 @@ typedef enum e_name
 	b
 }t_name;
 
-char	*get_next_line(int fd);
 // Init Functions
 t_push	*init_push_swap(int argc, char *argv[]);
 void	init_stacks(t_push *push_swap);
@@ -115,6 +112,6 @@ void	execute_swap(t_stack **stack);
 void	rotate(t_push *push_swap, t_mv type, t_bool print_checker);
 void	execute_rotate(t_stack **stack);
 void	reverse_rotate(t_push *push_swap, t_mv type, t_bool print_checker);
-void	execute_reverse_rotate(t_stack **stack);
+void	execute_rev_rot(t_stack **stack);
 
 #endif
